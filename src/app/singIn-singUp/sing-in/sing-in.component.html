@@ -1,2 +1,15 @@
 <h2>Accede a tu cuenta</h2>
 
+<form>
+  <div>
+    <label for="email">Email: </label>
+    <input type="email" [(ngModel)]="email" name="email" id="email" />
+  </div>
+
+  <div>
+    <label for="password">Contraseña: </label>
+    <input type="password" [(ngModel)]="password" name="password" id="password" />
+  </div>
+
+  <button (click)="login()">Accede</button>
+</form>

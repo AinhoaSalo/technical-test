@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +19,13 @@ export class ApiUsersService {
   //   this.http.post(  )
   // }
 
-  login(): void{
-    // const url = `${this.apiUrl}/auth/log-in`
-    // this.http.post(  )
-    console.log('Estas dentro')
+  loginService(email: string, password: string): Observable<any> {
+    const url = `${this.apiUrl}/auth/log-in`
+    return this.http.post(url, {
+      email,
+      password
+    }, httpOptions)
+
   }
 
 
