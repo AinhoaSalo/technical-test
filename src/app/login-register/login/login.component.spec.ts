@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SingInComponent } from './sing-in.component';
+import { SingInComponent } from './login.component';
 
 describe('SingInComponent', () => {
   let component: SingInComponent;

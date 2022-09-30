@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { SingInUpModule } from './singIn-singUp/singIn-singUp.module';
 import { UsersModule } from './users/users.module';
 import { HomeModule } from './home/home.module';
+import { LoginRegisterModule } from './login-register/login-register.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { HomeModule } from './home/home.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    SingInUpModule,
+    LoginRegisterModule,
     UsersModule,
     HomeModule
   ],

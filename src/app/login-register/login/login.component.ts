@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ApiUsersService } from '../../services/api-users.service';
 
 @Component({
-  selector: 'app-sing-in',
-  templateUrl: './sing-in.component.html',
-  styleUrls: ['./sing-in.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class SingInComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   email: string = '';
   password: string = '';
@@ -15,9 +15,11 @@ export class SingInComponent implements OnInit {
 
   login(){
 
-    this.apiUsersService.loginService(this.email, this.password).subscribe((data) =>{
-      console.log(data)
-    })
+    this.apiUsersService.loginService(this.email, this.password).subscribe(
+      (data) =>{
+        console.log(data.accessToken)
+      }
+    )
     
 
   }
