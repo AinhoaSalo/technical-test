@@ -20,12 +20,21 @@ export class ApiUsersService {
   // }
 
   loginService(email: string, password: string): Observable<any> {
-    const url = `${this.apiUrl}/auth/log-in`
+    const url = `${this.apiUrl}/auth/log-in`;
     return this.http.post(url, {
       email,
       password
-    }, httpOptions)
+    }, httpOptions);
+  }
 
+  registerService(name:string, surname:string, email: string, password:string): Observable<any>{
+    const url = `${this.apiUrl}/auth/sing-up`;
+    return this.http.post(url, {
+      name,
+      surname,
+      email,
+      password
+    }, httpOptions);
   }
 
 
