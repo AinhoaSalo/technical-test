@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from 'src/app/services/storage.service';
 import { ApiUsersService } from '../../services/api-users.service';
 
 @Component({
@@ -11,13 +12,13 @@ export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
   
-  constructor(private apiUsersService: ApiUsersService) { }
+  constructor(private apiUsersService: ApiUsersService, private storageService: StorageService) { }
 
   login(){
 
     this.apiUsersService.loginService(this.email, this.password).subscribe(
       (data) =>{
-        console.log(data.accessToken)
+        this.storageService.saveUser(data)
       }
     )
     
