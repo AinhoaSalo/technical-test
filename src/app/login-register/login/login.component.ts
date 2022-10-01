@@ -15,21 +15,27 @@ export class LoginComponent implements OnInit {
 
   constructor(private apiUsersService: ApiUsersService, private storageService: StorageService) { }
   ngOnInit(): void {
+    if (this.storageService.isLoggedIn()) {
+      console.log('User log in')
+      //Add redirection page users
+    }
   }
 
   //Method to send form data
   onSubmit(): void {
-
+    
     this.apiUsersService.loginService(this.email, this.password).subscribe({
-      next: (data) => {
+      next: (data: any) => {
+        //debugger
         this.storageService.saveTokenUser(data)
         alert('Contraseña correcta')
       },
-      error: err => {
+      error: (err: any) => {
         this.errorMessage = err.error.message;
         alert(this.errorMessage)
       }
     })
   }
+  
 
 }
