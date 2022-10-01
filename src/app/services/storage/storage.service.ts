@@ -22,7 +22,6 @@ export class StorageService {
     }else{
       return false;
     }
-   
   }
 
   getTokenUser(): any {

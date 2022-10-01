@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'
 import { PersonalAreaComponent } from './personal-area/personal-area.component';
 import { UsersListComponent } from './users-list/users-list.component';
+import { FormsModule } from '@angular/forms';
+
 
 //Module PersonalArea and UserList import in app.module.ts
 @NgModule({
@@ -14,7 +16,8 @@ import { UsersListComponent } from './users-list/users-list.component';
         UsersListComponent
     ],
     imports: [ 
-        CommonModule 
+        CommonModule,
+        FormsModule 
     ]
 })
 
