@@ -1,15 +1,17 @@
-<h2>Usuarios</h2>
 
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Apellidos</th>
-    <th>Email</th>
+<div id="allTableUsers">
+  <h2 id="titleUsers">Usuarios</h2>
+  <table id="tableUsers">
+  <tr id="headerTableUsers">
+    <th class="thTableUsers">Nombre</th>
+    <th class="thTableUsers">Apellidos</th>
+    <th class="thTableUsers">Email</th>
   </tr>
-  <tr *ngFor="let user of users; index as i">
-    <td>{{ user.name }}</td>
-    <td>{{ user.surname }}</td>
-    <td>{{ user.email }}</td>
+  <tr id="dataTableUsers" *ngFor="let user of users">
+    <td class="tdTableUsers">{{ user.name }}</td>
+    <td class="tdTableUsers">{{ user.surname }}</td>
+    <td class="tdTableUsers">{{ user.email }}</td>
   </tr>
-  
 </table>
+</div>
+
