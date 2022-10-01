@@ -17,16 +17,17 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Method to send form data
   onSubmit(): void {
 
     this.apiUsersService.loginService(this.email, this.password).subscribe({
       next: (data) => {
-        this.storageService.saveUser(data)
+        this.storageService.saveTokenUser(data)
+        alert('Contraseña correcta')
       },
       error: err => {
         this.errorMessage = err.error.message;
-        window.alert(this.errorMessage)
-        // this.isLoginFailed = true;
+        alert(this.errorMessage)
       }
     })
   }

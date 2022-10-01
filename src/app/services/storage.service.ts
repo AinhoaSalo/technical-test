@@ -9,7 +9,8 @@ export class StorageService {
 
   constructor() { }
 
-  saveUser(token: string): void{
+  //Method to save token when the user log in
+  saveTokenUser(token: string): void{
     window.sessionStorage.removeItem(userToken);
     window.sessionStorage.setItem(userToken, JSON.stringify(token))
   }

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common'
 import { PersonalAreaComponent } from './personal-area/personal-area.component';
 import { UsersListComponent } from './users-list/users-list.component';
 
-
+//Module PersonalArea and UserList import in app.module.ts
 @NgModule({
     declarations: [
         PersonalAreaComponent,
@@ -13,8 +13,8 @@ import { UsersListComponent } from './users-list/users-list.component';
         PersonalAreaComponent,
         UsersListComponent
     ],
-    imports: [ //en los imports solo se meten modulos
-        CommonModule //sirve para exporta todas las directivas y conductos básicos de Angular.
+    imports: [ 
+        CommonModule 
     ]
 })
 

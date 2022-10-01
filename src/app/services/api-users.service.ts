@@ -14,6 +14,7 @@ export class ApiUsersService {
 
   constructor(private http: HttpClient) { }
 
+  //Methods what connect to the API Hiberus
   registerService(name: string, surname: string, email: string, password: string): Observable<any> {
     // debugger
     const urlRegister = `${this.apiUrl}/auth/sign-up`;
@@ -33,7 +34,7 @@ export class ApiUsersService {
       password
     }, httpOptions);
   }
-
+  //So far
 
 
 
