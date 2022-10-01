@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { UsersModule } from './users/users.module';
 import { HomeModule } from './home/home.module';
 import { LoginRegisterModule } from './login-register/login-register.module';
+import { httpInterceptorProviders } from './interceptor/http.interceptor';
+
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,7 @@ import { LoginRegisterModule } from './login-register/login-register.module';
     UsersModule,
     HomeModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

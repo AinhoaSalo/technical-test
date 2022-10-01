@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiUsersService } from 'src/app/services/api-users.service';
+import { ApiUsersService } from 'src/app/services/api-users/api-users.service';
 
 @Component({
   selector: 'app-register',
@@ -27,9 +27,9 @@ export class RegisterComponent implements OnInit {
     const { name, surname, email, password } = this.form;
 
     this.apiUsersService.registerService(name, surname, email, password).subscribe({
-      next: (data) => {
+      next: (data: any) => {
         console.log(data)
-      }, error: err =>{
+      }, error: (err: any) =>{
       this.errorMessage = err.error.message;
       window.alert(this.errorMessage)
       }
