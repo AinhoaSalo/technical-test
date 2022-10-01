@@ -20,16 +20,16 @@ export class ApiUsersService {
   // }
 
   loginService(email: string, password: string): Observable<any> {
-    const url = `${this.apiUrl}/auth/log-in`;
-    return this.http.post(url, {
+    const urlLogin = `${this.apiUrl}/auth/log-in`;
+    return this.http.post(urlLogin, {
       email,
       password
     }, httpOptions);
   }
 
   registerService(name:string, surname:string, email: string, password:string): Observable<any>{
-    const url = `${this.apiUrl}/auth/sing-up`;
-    return this.http.post(url, {
+    const urlRegister = `${this.apiUrl}/auth/sign-up`;
+    return this.http.post(urlRegister, {
       name,
       surname,
       email,
