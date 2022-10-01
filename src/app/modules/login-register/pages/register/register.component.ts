@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiUsersService } from '../../services/api-users.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class RegisterComponent implements OnInit {
   errorMessage: string = '';
 
 
-  constructor(private apiUsersService: ApiUsersService) { }
+  constructor(private apiUsersService: ApiUsersService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -30,6 +31,7 @@ export class RegisterComponent implements OnInit {
     this.apiUsersService.registerService(name, surname, email, password).subscribe({
       next: (data: any) => {
         console.log(data)
+        this.router.navigate(['/login']);
       }, error: (err: any) =>{
       this.errorMessage = err.error.message;
       window.alert(this.errorMessage)

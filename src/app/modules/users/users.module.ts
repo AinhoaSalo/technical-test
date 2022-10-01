@@ -17,7 +17,7 @@ import { UsersListComponent } from './pages/users-list/users-list.component';
     ],
     imports: [ 
         CommonModule,
-        FormsModule 
+        FormsModule
     ]
 })
 

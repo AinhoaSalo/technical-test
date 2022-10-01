@@ -26,7 +26,6 @@ export class ApiUsersService {
     }, httpOptions);
   }
 
-
   loginService(email: string, password: string): Observable<any> {
     const urlLogin = `${this.apiUrl}/auth/log-in`;
     return this.http.post(urlLogin, {

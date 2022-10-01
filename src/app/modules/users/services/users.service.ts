@@ -19,9 +19,7 @@ export class UsersService {
           'Authorization': `Bearer ${token}` 
         })
     };
-    
     const urlGetUsers = `${this.apiUrl}/users`;
     return this.http.get(urlGetUsers, httpOptions)
-    
   }
 }
