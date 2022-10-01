@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageService } from '../../services/storage/storage.service';
-import { UsersService } from '../../services/managementUsers/users.service';
+import { UsersService } from '../../services/users.service';
+import { StorageService } from 'src/app/shared/services/storage.service';
+
 
 @Component({
   selector: 'app-users-list',

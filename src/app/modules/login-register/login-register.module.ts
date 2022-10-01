@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'
 
-import { RegisterComponent } from './register/register.component';
 
-import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 //Module Login and Register import in app.module.ts
 @NgModule({

@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { UsersModule } from './users/users.module';
-import { HomeModule } from './home/home.module';
-import { LoginRegisterModule } from './login-register/login-register.module';
-import { httpInterceptorProviders } from './interceptor/http.interceptor';
+import { SharedModule } from './shared/shared.module';
+
+import { httpInterceptorProviders } from './core/interceptor/http.interceptor';
+
+import { AppRoutingModule } from './app-routing.module';
+import { UsersModule } from './modules/users/users.module';
+import { LoginRegisterModule } from './modules/login-register/login-register.module';
+
 
 
 
@@ -16,10 +20,12 @@ import { httpInterceptorProviders } from './interceptor/http.interceptor';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
+    SharedModule,
     LoginRegisterModule,
-    UsersModule,
-    HomeModule
+    UsersModule
+    
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

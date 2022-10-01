@@ -1,5 +1,39 @@
-<!-- <app-home></app-home> -->
-<app-login></app-login>
-<!-- <app-register></app-register> -->
-<!-- <app-personal-area></app-personal-area>-->
-<app-users-list></app-users-list> 
+<div>
+  <header>
+    <ul>
+        <li 
+            routerLink="" 
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >
+            Home
+        </li>
+        <li 
+            routerLink="login" 
+            routerLinkActive="active">
+            Login
+        </li>
+        <li 
+            routerLink="registro" 
+            routerLinkActive="active">
+            registro
+        </li>
+        <li 
+            routerLink="areapersonal" 
+            routerLinkActive="active">
+            area personal
+        </li>
+        <li 
+            routerLink="usuarios" 
+            routerLinkActive="active">
+            usuarios
+        </li>
+    </ul>
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <footer>
+    <p>Hola, soy un footer</p>
+  </footer>
+</div>

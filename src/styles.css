@@ -34,8 +34,8 @@
   button:focus{ 
     outline: none;
   }
-  
-  .p-1 {
-    padding: 1px;
+
+  .active{
+    background-color: rgb(142, 142, 179);
   }
   
