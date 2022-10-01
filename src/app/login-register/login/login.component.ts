@@ -11,21 +11,24 @@ export class LoginComponent implements OnInit {
 
   email: string = '';
   password: string = '';
-  
+  errorMessage = '';
+
   constructor(private apiUsersService: ApiUsersService, private storageService: StorageService) { }
-
-  login(){
-
-    this.apiUsersService.loginService(this.email, this.password).subscribe(
-      (data) =>{
-        this.storageService.saveUser(data)
-      }
-    )
-    
-
+  ngOnInit(): void {
   }
 
-  ngOnInit(): void {
+  onSubmit(): void {
+
+    this.apiUsersService.loginService(this.email, this.password).subscribe({
+      next: (data) => {
+        this.storageService.saveUser(data)
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        window.alert(this.errorMessage)
+        // this.isLoginFailed = true;
+      }
+    })
   }
 
 }

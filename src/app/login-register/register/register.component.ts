@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiUsersService } from 'src/app/services/api-users.service';
 
 @Component({
@@ -6,21 +6,34 @@ import { ApiUsersService } from 'src/app/services/api-users.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
-  name: string = '';
-  surname: string = '';
-  email: string = '';
-  password: string = '';
-  
+export class RegisterComponent implements OnInit {
+
+  form: any = {
+    name: '',
+    surname: '',
+    email: '',
+    password: '',
+  }
+
+  errorMessage: string = '';
+
+
   constructor(private apiUsersService: ApiUsersService) { }
 
-  register(){
+  ngOnInit(): void {
+  }
 
-    this.apiUsersService.registerService(this.name, this.surname, this.email, this.password).subscribe(
-      (data: any) =>{
+  onSubmit(): void {
+    const { name, surname, email, password } = this.form;
+
+    this.apiUsersService.registerService(name, surname, email, password).subscribe({
+      next: (data) => {
         console.log(data)
+      }, error: err =>{
+      this.errorMessage = err.error.message;
+      window.alert(this.errorMessage)
       }
-    )//CONTROL OF ERRORS AND VALIDATIONS
+    });//CONTROL OF ERRORS AND VALIDATIONS
 
   }
 

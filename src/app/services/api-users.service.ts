@@ -14,10 +14,17 @@ export class ApiUsersService {
 
   constructor(private http: HttpClient) { }
 
-  // register(): void{
-  //   const url = `${this.apiUrl}/auth/sign-up`
-  //   this.http.post(  )
-  // }
+  registerService(name: string, surname: string, email: string, password: string): Observable<any> {
+    // debugger
+    const urlRegister = `${this.apiUrl}/auth/sign-up`;
+    return this.http.post(urlRegister, {
+      name,
+      surname,
+      email,
+      password
+    }, httpOptions);
+  }
+
 
   loginService(email: string, password: string): Observable<any> {
     const urlLogin = `${this.apiUrl}/auth/log-in`;
@@ -27,15 +34,7 @@ export class ApiUsersService {
     }, httpOptions);
   }
 
-  registerService(name:string, surname:string, email: string, password:string): Observable<any>{
-    const urlRegister = `${this.apiUrl}/auth/sign-up`;
-    return this.http.post(urlRegister, {
-      name,
-      surname,
-      email,
-      password
-    }, httpOptions);
-  }
+
 
 
 }
