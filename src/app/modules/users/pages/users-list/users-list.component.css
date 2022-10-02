@@ -1,25 +1,33 @@
-#allTableUsers{
+*{
+    color: black;
+    
+}
+
+#containerTableUsers{
     display: grid;
     place-content: center;
+    margin: 2em;
 }
 
 #titleUsers{
     text-align: center;
+    background-color: rgb(43, 137, 180);
+    padding: 0.3em;
 }
 
 #tableUsers{
-    border: solid 1px rgb(84, 146, 175);
-    border-radius: 5px;
     border-spacing: unset;
-    /*border-collapse: collapse;*/ 
+    border: solid 0.05em rgba(43, 137, 180, 0.753);
 }
+
 .thTableUsers{
     padding: 0.6em 10em;
+    border: solid 0.05em rgba(43, 137, 180, 0.753);
 }
 
 .tdTableUsers{
-    padding: 0.7em 0.3em;
-    
+    padding: 0.7em 1em;
+    border: solid 0.05em rgba(43, 137, 180, 0.753);
 }
 
 #tableUsers tr:nth-child(even){
@@ -28,4 +36,11 @@
 
 #tableUsers tr:nth-child(odd){
     background-color: rgb(100, 171, 204);
+}
+
+.pagination{
+    background-color: rgb(43, 137, 180);
+    display: grid;
+    place-content: center;
+    padding-top: 1em;
 }

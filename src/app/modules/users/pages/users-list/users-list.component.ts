@@ -14,6 +14,8 @@ export class UsersListComponent implements OnInit {
   users: any;
   token: string = ''; //private?
   errorMessage: string = '';
+  page: number = 1;
+
 
 
   constructor(private usersService: UsersService, private storageService: StorageService, private router: Router) { }

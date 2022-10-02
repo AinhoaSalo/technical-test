@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms';
 import { PersonalAreaComponent } from './pages/personal-area/personal-area.component';
 import { UsersListComponent } from './pages/users-list/users-list.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 //Module PersonalArea and UserList import in app.module.ts
@@ -17,7 +18,8 @@ import { UsersListComponent } from './pages/users-list/users-list.component';
     ],
     imports: [ 
         CommonModule,
-        FormsModule
+        FormsModule,
+        NgxPaginationModule
     ]
 })
 
