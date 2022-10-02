@@ -19,8 +19,18 @@ export class UsersService {
           'Authorization': `Bearer ${token}` 
         })
     };
-    // const urlGetUsers = this.apiUrl;
     return this.http.get(this.apiUrl, httpOptions)
+  }
+
+  getUserMe(token: string): Observable<any>{
+    const httpOptions = {
+      headers: new HttpHeaders({ 
+          'Content-Type': 'application/json', 
+          'Authorization': `Bearer ${token}` 
+        })
+    };
+    const urlUserMe = `${this.apiUrl}/me`;
+    return this.http.get(urlUserMe, httpOptions)
   }
 
   putUsers(token: string, id: string): Observable<any>{

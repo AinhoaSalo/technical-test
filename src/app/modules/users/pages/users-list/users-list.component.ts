@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 
 
 @Component({
@@ -16,8 +17,6 @@ export class UsersListComponent implements OnInit {
   errorMessage: string = '';
   page: number = 1; //for pagination
 
-
-
   constructor(private usersService: UsersService, private storageService: StorageService, private router: Router) { }
 
   ngOnInit(): void {
@@ -25,12 +24,14 @@ export class UsersListComponent implements OnInit {
     //debugger
     // Make them only accessible if you are logged in
     if (!callLoggedIn || undefined || null) {
+
       alert('Por favor, tiene que loguearse');
       this.router.navigate(['login']); //redirect to login
 
-
     } else {
+
       this.token = this.storageService.getTokenUser().accessToken;
+
       this.usersService.getUsers(this.token).subscribe({
         next: (data: any) => {
           console.log(data.items)

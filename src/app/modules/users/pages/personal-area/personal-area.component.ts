@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 })
 export class PersonalAreaComponent implements OnInit {
 
-  users: any;
-  id: string = '';
+  userMe: any;
   token: string = ''; //private?
   errorMessage: string = '';
+  modify: boolean = false;
 
   constructor(private usersService: UsersService, private storageService: StorageService, private router: Router) { }
 
@@ -25,10 +25,10 @@ export class PersonalAreaComponent implements OnInit {
 
     } else {
       this.token = this.storageService.getTokenUser().accessToken;
-      this.usersService.getUsers(this.token).subscribe({
+      this.usersService.getUserMe(this.token).subscribe({
         next: (data: any) => {
-          console.log(data.items) 
-          this.users = data.items;
+          console.log(data) 
+          this.userMe = data;
         }, error: (err: any) => {
           this.errorMessage = err.error.message;
           window.alert(this.errorMessage)
@@ -38,8 +38,12 @@ export class PersonalAreaComponent implements OnInit {
     }
   }
 
+  buttonModify(){
+    this.modify = true;
+  }
+
   put(){
-    
+    this.modify = false;
   }
 
   logOut(){
