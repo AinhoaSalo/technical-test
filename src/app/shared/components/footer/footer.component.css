@@ -1,0 +1,30 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 0;
+}
+
+.socialMediaTitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.socialMedia {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0.2em;
+}
+
+.linkSocialMedia {
+    padding: 0 1em;
+}
+
+.pFooter{
+    font-size: 0.7em;
+}

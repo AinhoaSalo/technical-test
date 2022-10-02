@@ -1,0 +1,32 @@
+<div id="containerPersonalArea">
+  <div>
+    <h2 id="titlePersonalArea">AREA PERSONAL</h2>
+  </div>
+  <div id="dataUsersPersonalArea">
+    <img src="../../../../../assets/images/grogu.jpg" alt="Foto de perfil" />
+    <div *ngIf="!modify">
+      <ul>
+        <li>Nombre: {{ userMe.name }}</li>
+        <li>Apellido: {{ userMe.surname }}</li>
+      </ul>
+    </div>
+
+    <div *ngIf="modify">
+      <div>
+        <label>Nombre: </label>
+        <input type="text" [(ngModel)]="form.name" placeholder="{{ userMe.name }}" />
+      </div>
+      <div>
+        <label>Apellido: </label>
+        <input type="text" [(ngModel)]="form.surname" placeholder="{{ userMe.surname }}" />
+      </div>
+      <div><button (click)="put()">Enviar datos</button></div>
+    </div>
+  </div>
+
+  <div class="buttonsPersonalArea">
+    <button (click)="buttonModify()">Modificar datos</button>
+    <button>Borrar usuario</button>
+    <button (click)="logOut()">Cerrar sesión</button>
+  </div>
+</div>

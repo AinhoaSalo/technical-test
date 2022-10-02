@@ -1,0 +1,25 @@
+
+<div id="containerTableUsers"> 
+  <h2 id="titleUsers">Usuarios</h2>
+  <table id="tableUsers">
+    <tr id="headerTableUsers">
+      <th class="thTableUsers">Nombre</th>
+      <th class="thTableUsers">Apellidos</th>
+      <th class="thTableUsers">Email</th>
+    </tr>
+    <tr id="dataTableUsers" *ngFor="let user of users | paginate: { itemsPerPage: 10, currentPage: page }">
+      <td class="tdTableUsers">{{ user.name }}</td>
+      <td class="tdTableUsers">{{ user.surname }}</td>
+      <td class="tdTableUsers">{{ user.email }}</td>
+    </tr>
+  </table>
+  <div class="pagination">
+    <pagination-controls class="my-pagination" (pageChange)="page = $event"
+      previousLabel="Anterior"
+      nextLabel="Siguiente">
+    </pagination-controls>
+  </div>
+</div>
+
+
+

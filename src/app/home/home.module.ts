@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './component/home.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -9,8 +10,9 @@ import { HomeComponent } from './home/home.component';
     exports: [
         HomeComponent
     ],
-    imports: [ //en los imports solo se meten modulos
-        CommonModule //sirve para exporta todas las directivas y conductos básicos de Angular.
+    imports: [ 
+        CommonModule, 
+        RouterModule
     ]
 })
 

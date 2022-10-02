@@ -1,0 +1,33 @@
+#containerPersonalArea{
+    display: grid;
+    place-content: center;
+    text-align: center;
+    padding-top: 5em;
+}
+
+#dataUsersPersonalArea{
+    padding: 2em 5em;
+    background-color: rgba(69, 98, 109, 0.863);
+    border-radius: 0.5em;
+    margin: 2em 0;
+    list-style: none;
+}
+
+#dataUsersPersonalArea img{
+    margin: 2em;
+    border-radius: 0.5em;
+}
+
+#dataUsersPersonalArea ul{
+    list-style: none;
+    text-align-last: justify;
+    padding: 0 6.3em;
+}
+
+#dataUsersPersonalArea li{
+    padding: 0.2em;
+}
+
+#titlePersonalArea{
+    color: #EA6E99;
+}
