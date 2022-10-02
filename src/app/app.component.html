@@ -1,39 +1,12 @@
 <div>
-  <header>
-    <ul>
-        <li 
-            routerLink="" 
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >
-            Home
-        </li>
-        <li 
-            routerLink="login" 
-            routerLinkActive="active">
-            Login
-        </li>
-        <li 
-            routerLink="registro" 
-            routerLinkActive="active">
-            registro
-        </li>
-        <li 
-            routerLink="areapersonal" 
-            routerLinkActive="active">
-            area personal
-        </li>
-        <li 
-            routerLink="usuarios" 
-            routerLinkActive="active">
-            usuarios
-        </li>
-    </ul>
+  <header> 
+    <app-navbar></app-navbar>
+    <app-header></app-header>
   </header>
   <main>
     <router-outlet></router-outlet>
   </main>
   <footer>
-    <p>Hola, soy un footer</p>
+    <app-footer></app-footer>
   </footer>
 </div>
