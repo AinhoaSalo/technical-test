@@ -16,11 +16,14 @@
   display: flex;
   flex-direction: row;
   list-style: none;
+  border: solid 1px white;
+  border-radius: 0.5em;
+  padding: 0.3em;
 }
 
 .liNavbar{
-  padding: 0.5em 1em;
-
+  padding: 0.5em 0.75em;
+  cursor: pointer;
 }
 
 .active{
@@ -28,7 +31,7 @@
   border-radius: 0.5em;
 }
 
-@media (min-width: 580px) {
+@media (min-width: 635px) {
   #containerNavbar{
     display: flex;
     flex-direction: row-reverse;
@@ -38,6 +41,17 @@
 
   #imgNavbar img{
     width: 160px;
+  }
+
+  #ulNavbar {
+    border: solid 1px white;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    margin: 0.8em;
+  }
+
+  .liNavbar{
+    padding: 0.5em 0.85em;
   }
 }
 
