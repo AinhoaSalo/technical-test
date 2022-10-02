@@ -11,29 +11,41 @@ import { Router } from '@angular/router';
 export class PersonalAreaComponent implements OnInit {
 
   users: any;
+  id: string = '';
   token: string = ''; //private?
   errorMessage: string = '';
 
-  constructor(private usersService: UsersService, private storageService: StorageService, private router:Router) { }
+  constructor(private usersService: UsersService, private storageService: StorageService, private router: Router) { }
 
   ngOnInit(): void {
     const callLoggedIn = this.storageService.isLoggedIn();
-    if (!callLoggedIn  || undefined || null) {
+    if (!callLoggedIn || undefined || null) {
       alert('Por favor, tiene que loguearse');
       this.router.navigate(['login']);
-      
-    }else{
-      // this.token = this.storageService.getTokenUser().accessToken;
-      // this.usersService.getUsers(this.token).subscribe({
-      //   next: (data: any) => {
-      //     console.log(data.items)
-      //     this.users = data.items;
-      //   }, error: (err: any) => {
-      //     this.errorMessage = err.error.message;
-      //     window.alert(this.errorMessage)
-      //   }
-      // });
+
+    } else {
+      this.token = this.storageService.getTokenUser().accessToken;
+      this.usersService.getUsers(this.token).subscribe({
+        next: (data: any) => {
+          console.log(data.items) 
+          this.users = data.items;
+        }, error: (err: any) => {
+          this.errorMessage = err.error.message;
+          window.alert(this.errorMessage)
+        }
+      });
+
     }
+  }
+
+  put(){
+    
+  }
+
+  logOut(){
+    sessionStorage.removeItem('authTokenUser');
+    alert('Sesión cerrada');
+    this.router.navigate(['']);
   }
 
 }

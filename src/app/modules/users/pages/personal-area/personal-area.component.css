@@ -1,0 +1,22 @@
+#containerPersonalArea{
+    display: grid;
+    place-content: center;
+    text-align: center;
+    padding-top: 5em;
+}
+
+#dataUsersPersonalArea{
+    padding: 2em 5em;
+    background-color: rgba(69, 98, 109, 0.863);
+    border-radius: 0.5em;
+    margin: 2em 0;
+}
+
+#dataUsersPersonalArea img{
+    margin: 2em;
+    border-radius: 0.5em;
+}
+
+#titlePersonalArea{
+    color: #EA6E99;
+}
