@@ -1,12 +1,11 @@
 *{
     color: black;
-    
 }
 
 #containerTableUsers{
     display: grid;
     place-content: center;
-    margin: 2em;
+    margin: 1em;
 }
 
 #titleUsers{
@@ -18,15 +17,16 @@
 #tableUsers{
     border-spacing: unset;
     border: solid 0.05em rgba(43, 137, 180, 0.753);
+    font-size: 0.8em;
 }
 
 .thTableUsers{
-    padding: 0.6em 10em;
+    padding: 0.6em;
     border: solid 0.05em rgba(43, 137, 180, 0.753);
 }
 
 .tdTableUsers{
-    padding: 0.7em 1em;
+    padding: 1em 0.4em;
     border: solid 0.05em rgba(43, 137, 180, 0.753);
 }
 
@@ -43,4 +43,50 @@
     display: grid;
     place-content: center;
     padding-top: 1em;
+    font-size: 0.8em;
+}
+
+@media (max-width: 629.99px) and (min-width: 500px) {
+    #tableUsers{
+        font-size: 0.9em;
+    }
+    
+    .tdTableUsers{
+        padding: 1em;
+    }
+
+    .pagination{
+        font-size: 0.9em;
+    }
+
+}
+
+@media (max-width: 829.99px) and (min-width: 630px) {
+    #tableUsers{
+        font-size: 0.95em;
+    }
+    
+    .thTableUsers{
+        padding: 1em 4.2em;
+    }
+
+    .pagination{
+        font-size: 0.95em;
+    }
+    
+}
+
+@media (min-width: 830px) {
+    #tableUsers{
+        font-size: 0.95em;
+    }
+    
+    .thTableUsers{
+        padding: 1em 7em;
+    }
+    
+    .pagination{
+        font-size: 0.95em;
+    }
+    
 }

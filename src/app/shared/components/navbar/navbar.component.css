@@ -1,16 +1,15 @@
-/* * {
-  background-color: rgb(0, 0, 0);
-} */
+
 
 #containerNavbar{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 0.8em;
 }
 
 #imgNavbar img{
-  width: 160px;
+  width: 130px;
 }
 
 #ulNavbar {
@@ -24,18 +23,25 @@
 
 }
 
+.active{
+  background-color: #EA6E99;
+  border-radius: 0.5em;
+}
 
-@media (min-width: 636px) {
+@media (min-width: 580px) {
   #containerNavbar{
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    font-size: 0.9em;
+  }
+
+  #imgNavbar img{
+    width: 160px;
   }
 }
 
-.active{
-  background-color: #EA6E99;
-}
+
 
 
 
