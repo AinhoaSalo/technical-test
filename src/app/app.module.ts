@@ -9,6 +9,8 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { UsersModule } from './modules/users/users.module';
 import { LoginRegisterModule } from './modules/login-register/login-register.module';
+import { HomeModule } from './home/home.module';
+
 
 
 @NgModule({
@@ -20,6 +22,7 @@ import { LoginRegisterModule } from './modules/login-register/login-register.mod
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
+    HomeModule,
     LoginRegisterModule,
     UsersModule
     
