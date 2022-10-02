@@ -14,11 +14,11 @@
     <div *ngIf="modify">
       <div>
         <label>Nombre: </label>
-        <input type="text" placeholder="{{ userMe.name }}" />
+        <input type="text" [(ngModel)]="form.name" placeholder="{{ userMe.name }}" />
       </div>
       <div>
         <label>Apellido: </label>
-        <input type="text" placeholder="{{ userMe.surname }}" />
+        <input type="text" [(ngModel)]="form.surname" placeholder="{{ userMe.surname }}" />
       </div>
       <div><button (click)="put()">Enviar datos</button></div>
     </div>

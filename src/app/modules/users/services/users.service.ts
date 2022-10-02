@@ -33,15 +33,19 @@ export class UsersService {
     return this.http.get(urlUserMe, httpOptions)
   }
 
-  putUsers(token: string, id: string): Observable<any>{
+  putUser(token: string, id: string, name: string, surname: string): Observable<any>{
     const httpOptions = {
       headers: new HttpHeaders({ 
           'Content-Type': 'application/json', 
           'Authorization': `Bearer ${token}` 
         })
     };
-    const urlPutUsers = `${this.apiUrl}/{${id}}`;
-    return this.http.put(urlPutUsers, httpOptions)
+    const urlPutUsers = `${this.apiUrl}/${id}`;
+    const dataUser = {
+      "name": `${name}`,
+      "surname": `${surname}`
+    }
+    return this.http.put(urlPutUsers, dataUser, httpOptions)
   }
 
   deleteUsers(token: string, id: string): Observable<any>{
@@ -51,7 +55,7 @@ export class UsersService {
           'Authorization': `Bearer ${token}` 
         })
     };
-    const urldeleteUsers = `${this.apiUrl}/{${id}}`;
+    const urldeleteUsers = `${this.apiUrl}/${id}`;
     return this.http.delete(urldeleteUsers, httpOptions)
   }
 }
