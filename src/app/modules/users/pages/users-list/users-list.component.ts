@@ -14,18 +14,19 @@ export class UsersListComponent implements OnInit {
   users: any;
   token: string = ''; //private?
   errorMessage: string = '';
-  page: number = 1;
+  page: number = 1; //for pagination
 
 
 
   constructor(private usersService: UsersService, private storageService: StorageService, private router: Router) { }
 
   ngOnInit(): void {
-
+    const callLoggedIn = this.storageService.isLoggedIn();
     //debugger
-    if (!this.storageService.isLoggedIn() || undefined || null) {
+    // Make them only accessible if you are logged in
+    if (!callLoggedIn || undefined || null) {
       alert('Por favor, tiene que loguearse');
-      this.router.navigate(['login']);
+      this.router.navigate(['login']); //redirect to login
 
 
     } else {
