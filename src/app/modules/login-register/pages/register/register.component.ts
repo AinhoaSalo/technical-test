@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['../../login-register.css']
 })
 export class RegisterComponent implements OnInit {
 
@@ -31,6 +31,7 @@ export class RegisterComponent implements OnInit {
     this.apiUsersService.registerService(name, surname, email, password).subscribe({
       next: (data: any) => {
         console.log(data)
+        alert('Usuario creado');
         this.router.navigate(['/login']);
       }, error: (err: any) =>{
       this.errorMessage = err.error.message;
