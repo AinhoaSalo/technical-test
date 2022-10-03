@@ -2,6 +2,14 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+function getHeaders(token: string): any {
+  return {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    })
+  };
+}
 
 @Injectable({
   providedIn: 'root'
@@ -12,34 +20,19 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(token: string): Observable<any>{
-    const httpOptions = {
-      headers: new HttpHeaders({ 
-          'Content-Type': 'application/json', 
-          'Authorization': `Bearer ${token}` 
-        })
-    };
+  getUsers(token: string): Observable<any> {
+    const httpOptions = getHeaders(token);
     return this.http.get(this.apiUrl, httpOptions)
   }
 
-  getUserMe(token: string): Observable<any>{
-    const httpOptions = {
-      headers: new HttpHeaders({ 
-          'Content-Type': 'application/json', 
-          'Authorization': `Bearer ${token}` 
-        })
-    };
+  getUserMe(token: string): Observable<any> {
+    const httpOptions = getHeaders(token);
     const urlUserMe = `${this.apiUrl}/me`;
     return this.http.get(urlUserMe, httpOptions)
   }
 
-  putUser(token: string, id: string, name: string, surname: string): Observable<any>{
-    const httpOptions = {
-      headers: new HttpHeaders({ 
-          'Content-Type': 'application/json', 
-          'Authorization': `Bearer ${token}` 
-        })
-    };
+  putUser(token: string, id: string, name: string, surname: string): Observable<any> {
+    const httpOptions = getHeaders(token)
     const urlPutUsers = `${this.apiUrl}/${id}`;
     const dataUser = {
       "name": `${name}`,
@@ -48,23 +41,9 @@ export class UsersService {
     return this.http.put(urlPutUsers, dataUser, httpOptions)
   }
 
-  deleteUsers(token: string, id: string): Observable<any>{
-    const httpOptions = {
-      headers: new HttpHeaders({ 
-          'Content-Type': 'application/json', 
-          'Authorization': `Bearer ${token}` 
-        })
-    };
+  deleteUsers(token: string, id: string): Observable<any> {
+    const httpOptions = getHeaders(token);
     const urldeleteUsers = `${this.apiUrl}/${id}`;
     return this.http.delete(urldeleteUsers, httpOptions)
   }
 }
-
-// function getToken(): any {
-// const httpOptions = {
-//       headers: new HttpHeaders({ 
-//           'Content-Type': 'application/json', 
-//           'Authorization': `Bearer ${token}` 
-//         })
-//     };
-// }

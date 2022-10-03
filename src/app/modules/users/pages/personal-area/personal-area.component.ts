@@ -63,7 +63,7 @@ export class PersonalAreaComponent implements OnInit {
       this.usersService.putUser(this.token, this.userMe.id, this.userMe.name, this.userMe.surname).subscribe({
         next: (data: any) => {
           console.log(data)
-          window.location.reload();
+          this.userMe = data;
         }, error: (err: any) => {
           this.errorMessage = err.error.message;
           window.alert(this.errorMessage)

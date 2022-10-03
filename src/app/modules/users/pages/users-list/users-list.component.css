@@ -6,6 +6,7 @@
     display: grid;
     place-content: center;
     padding-top: 4em;
+    /* overflow-x: auto; */
 }
 
 #titleUsers{
