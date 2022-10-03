@@ -3,8 +3,6 @@ import { StorageService } from 'src/app/shared/services/storage.service';
 import { ApiUsersService } from '../../services/api-users.service';
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   email: string = '';
   password: string = '';
-  errorMessage = '';
+  errorMessage: string = '';
 
   constructor(private apiUsersService: ApiUsersService, private storageService: StorageService, private router: Router) { }
   ngOnInit(): void {}
