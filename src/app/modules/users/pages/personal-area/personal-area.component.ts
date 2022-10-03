@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { StorageService } from 'src/app/shared/services/storage.service';
 import { Router } from '@angular/router';
-import { ResourceLoader } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-personal-area',
@@ -15,15 +15,13 @@ export class PersonalAreaComponent implements OnInit {
   token: string = ''; //private?
   errorMessage: string = '';
   modify: boolean = false;
-  form: any = {
-    name: '',
-    surname: ''
-  }
+  deleteConfirm: boolean = false;
 
   constructor(private usersService: UsersService, private storageService: StorageService, private router: Router) { }
-
+  
   ngOnInit(): void {
     const callLoggedIn = this.storageService.isLoggedIn();
+    
     if (!callLoggedIn || undefined || null) {
       alert('Por favor, tiene que loguearse');
       this.router.navigate(['login']);
@@ -47,12 +45,22 @@ export class PersonalAreaComponent implements OnInit {
     this.modify = true;
   }
 
+  buttonCancelDeleteModify(){
+    this.modify = false;
+    this.deleteConfirm = false;
+  }
+
+  buttonDelete(){
+    this.modify = true;
+    this.deleteConfirm = true;
+  }
+
   put() {
-    if ((this.form.name === "") || (this.form.surname === "")) {
+    if ((this.userMe.name === "") || (this.userMe.surname === "")) {
       alert("Campo vacio, por favor, introduzca el nombre y el apellido")
     } else {
       this.token = this.storageService.getTokenUser().accessToken;
-      this.usersService.putUser(this.token, this.userMe.id, this.form.name, this.form.surname).subscribe({
+      this.usersService.putUser(this.token, this.userMe.id, this.userMe.name, this.userMe.surname).subscribe({
         next: (data: any) => {
           console.log(data)
           window.location.reload();
@@ -64,6 +72,23 @@ export class PersonalAreaComponent implements OnInit {
       this.modify = false;
     }
     
+  }
+
+  delete(){
+    this.token = this.storageService.getTokenUser().accessToken;
+      this.usersService.deleteUsers(this.token, this.userMe.id).subscribe({
+        next: (data: any) => {
+          console.log(data);
+        }, error: (err: any) => {
+          this.errorMessage = err.error.message;
+          window.alert(this.errorMessage)
+        }
+      });
+    sessionStorage.removeItem('authTokenUser');
+    alert('Usuario borrado');
+    this.router.navigate(['']);
+    this.modify = false
+
   }
 
   logOut() {

@@ -2,31 +2,55 @@
   <div>
     <h2 id="titlePersonalArea">AREA PERSONAL</h2>
   </div>
-  <div id="dataUsersPersonalArea">
+  <form id="dataUsersPersonalArea">
     <img src="../../../../../assets/images/grogu.jpg" alt="Foto de perfil" />
-    <div *ngIf="!modify">
+
+    <div *ngIf="!modify && !deleteConfirm">
       <ul>
         <li>Nombre: {{ userMe.name }}</li>
         <li>Apellido: {{ userMe.surname }}</li>
       </ul>
     </div>
 
-    <div *ngIf="modify">
+    <div *ngIf="modify && !deleteConfirm">
+
       <div>
-        <label>Nombre: </label>
-        <input type="text" [(ngModel)]="form.name" placeholder="{{ userMe.name }}" />
+        <label for="name">Nombre: </label>
+        <input type="text" [(ngModel)]="userMe.name" name="name" id="name" value="{{userMe.name}}"/>
       </div>
+
       <div>
-        <label>Apellido: </label>
-        <input type="text" [(ngModel)]="form.surname" placeholder="{{ userMe.surname }}" />
+        <label for="surname">Apellido: </label>
+        <input type="text" [(ngModel)]="userMe.surname" name="surname" id="surname" value="{{userMe.surname}}"/>
       </div>
-      <div><button (click)="put()">Enviar datos</button></div>
+
+      <div>
+        <button (click)="put()">Enviar datos</button>
+        <button (click)="buttonCancelDeleteModify()">Cancelar</button>
+      </div>
+
     </div>
-  </div>
+
+    <div *ngIf="deleteConfirm">
+
+      <div>
+        <p>Estas seguro de querer borrar tu usuarios?</p>
+      </div>
+
+      <div>
+        <button (click)="delete();">Si</button>
+        <button (click)="buttonCancelDeleteModify()">No</button>
+      </div>
+
+    </div>
+    
+  </form>
 
   <div class="buttonsPersonalArea">
+
     <button (click)="buttonModify()">Modificar datos</button>
-    <button>Borrar usuario</button>
+    <button (click)="buttonDelete()">Borrar usuario</button>
     <button (click)="logOut()">Cerrar sesión</button>
+    
   </div>
 </div>
