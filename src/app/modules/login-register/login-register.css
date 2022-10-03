@@ -7,8 +7,8 @@
 .allForm{
     display: grid;
     place-content: center;
-    background-image: linear-gradient(-225deg, #a4b5b9 50%, #e6bdcb 50%);
-    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    background: linear-gradient(-225deg, #a4b5b9 20%, #e6bdcb 60%);
+    /* box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31); */
     width: 19em; /*28em*/
     min-height: 21em; /*31.25em*/
     border-radius: 0.5em;
