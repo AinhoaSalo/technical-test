@@ -6,7 +6,7 @@
 }
 
 #dataUsersPersonalArea{
-    padding: 2em 5em;
+    padding: 2em 0;
     background-color: rgba(69, 98, 109, 0.863);
     border-radius: 0.5em;
     margin: 2em 0;
@@ -25,9 +25,18 @@
 }
 
 #dataUsersPersonalArea li{
-    padding: 0.2em;
+    color: #EA6E99;
+    font-size: 1.2em;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    background-color: hsla(20, 58%, 77%, 0.062);
 }
 
 #titlePersonalArea{
     color: #EA6E99;
+}
+
+@media (min-width: 630px) {
+    #dataUsersPersonalArea{
+        padding: 2em 5em;
+    }
 }
