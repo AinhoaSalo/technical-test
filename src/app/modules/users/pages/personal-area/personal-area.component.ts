@@ -90,11 +90,9 @@ export class PersonalAreaComponent implements OnInit {
   delete(){
     this.token = this.storageService.getTokenUser().accessToken;
       this.usersService.deleteUsers(this.token, this.userMe.id).subscribe({
-        next: (data: any) => {
-          console.log(data);
+        next: () => {
         }, error: (err: any) => {
           this.errorMessage = err.error.message;
-          console.log(this.errorMessage)
         }
       });
     sessionStorage.removeItem('authTokenUser');

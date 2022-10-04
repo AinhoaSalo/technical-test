@@ -26,10 +26,9 @@ export class StorageService {
 
   getTokenUser(): any {
     let user = window.sessionStorage.getItem(userToken);
-    console.log('here')
+
     if (user) {
       return JSON.parse(user);
     }
-    console.log(user);
   }
 }

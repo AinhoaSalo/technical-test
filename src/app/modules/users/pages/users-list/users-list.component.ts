@@ -34,7 +34,6 @@ export class UsersListComponent implements OnInit {
 
       this.usersService.getUsers(this.token).subscribe({
         next: (data: any) => {
-          console.log(data.items)
           this.users = data.items;
         }, error: (err: any) => {
           this.errorMessage = err.error.message;
