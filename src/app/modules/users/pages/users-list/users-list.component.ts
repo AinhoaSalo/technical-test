@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
-import { StorageService } from 'src/app/shared/services/storage.service';
+import { StorageService } from 'src/app/shared/services/storage/storage.service';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 

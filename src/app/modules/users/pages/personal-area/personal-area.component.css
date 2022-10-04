@@ -2,7 +2,7 @@
     display: grid;
     place-content: center;
     text-align: center;
-    padding-top: 5em;
+    padding-top: 2em; /*5em???*/
 }
 
 #dataUsersPersonalArea{
@@ -11,6 +11,10 @@
     border-radius: 0.5em;
     margin: 2em 0;
     list-style: none;
+}
+
+#titlePersonalArea{
+    color: #EA6E99;
 }
 
 #dataUsersPersonalArea img{
@@ -31,8 +35,8 @@
     background-color: hsla(20, 58%, 77%, 0.062);
 }
 
-#titlePersonalArea{
-    color: #EA6E99;
+.spanError {
+    color: red;
 }
 
 @media (min-width: 630px) {

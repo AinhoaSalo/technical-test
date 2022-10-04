@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StorageService } from 'src/app/shared/services/storage.service';
+import { StorageService } from 'src/app/shared/services/storage/storage.service';
 import { ApiUsersService } from '../../services/api-users.service';
 import { Router } from '@angular/router';
 import { Utils } from '../../../../shared/services/utils/utils.service';
