@@ -20,8 +20,8 @@ export class UsersListComponent implements OnInit {
   constructor(private usersService: UsersService, private storageService: StorageService, private router: Router) { }
 
   ngOnInit(): void {
-    const callLoggedIn = this.storageService.isLoggedIn();
-    //debugger
+    let callLoggedIn = this.storageService.isLoggedIn();
+    
     // Make them only accessible if you are logged in
     if (!callLoggedIn || undefined || null) {
 
@@ -38,7 +38,7 @@ export class UsersListComponent implements OnInit {
           this.users = data.items;
         }, error: (err: any) => {
           this.errorMessage = err.error.message;
-          window.alert(this.errorMessage)
+          alert(this.errorMessage)
         }
       });
     }
