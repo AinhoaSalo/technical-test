@@ -24,11 +24,17 @@
 .liNavbar{
   padding: 0.5em 0.75em;
   cursor: pointer;
+  border-radius: 0.5em;
 }
 
 .active{
   background-color: #EA6E99;
   border-radius: 0.5em;
+}
+
+li:hover {
+  background-color: #e6bdcb;
+  color: rgb(104, 100, 100);
 }
 
 @media (min-width: 635px) {

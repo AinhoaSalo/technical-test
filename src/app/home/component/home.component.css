@@ -1,36 +1,48 @@
-* {
-    background: none;
-    color: black;
-}
-
-#titleHome {
+#containerHome {
     display: flex;
     justify-content: center;
-    padding: 0.2em;
-    background-color: rgb(209, 182, 224);
+    align-items: center;
+    padding-top: 9em;
+    text-align: justify;
 }
 
-#routerLinkHome {
-    list-style: none;
-    margin: 2em;
+#allHome{
+    width: 15em;
+    height: 10em;
+    background-color: #dea1a8bd;
+    border-radius: 5em;
+    padding: 2em 4em 6em;
 }
 
-.liRouterLinkHome{
-    cursor: pointer;
-    background-color: rgba(110, 130, 173, 0.993);
-    height: 6em;
-    margin: 0.5em;
-    padding: 1em;
-    border-radius: 0.5em;
-    display: grid;
-    place-content: center;
+#titleHome{
+    font-size: 1em;
+    margin-bottom: 1em;
 }
 
-@media (min-width: 600px) {
-    #routerLinkHome {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+#textHome ul{
+    margin: 0.5em 2em;
+    text-align-last: left;
+}
 
+@media (min-width: 630px) {
+    #containerHome {
+        padding-top: 8em;
+    }
+
+    #allHome{
+        width: 35em;
+        height: 15em;
+        background-color: rgba(107, 128, 155, 0.459);
+        border-radius: 6em;
+    }
+
+    #titleHome{
+        font-size: 2em;
+        margin-bottom: 1em;
+        text-align: center;
+    }
+
+    #textHome {
+        padding: 0 4em;
     }
 }

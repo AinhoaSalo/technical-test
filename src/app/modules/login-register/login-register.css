@@ -1,0 +1,99 @@
+.containerForm {
+    display: grid;
+    place-content: center;
+    padding-top: 7em;
+}
+
+.allForm {
+    display: grid;
+    place-content: center;
+    background: linear-gradient(-225deg, #a4b5b9 20%, #e6bdcb 60%);
+    /* box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31); */
+    width: 19em;
+    min-height: 21em;
+    border-radius: 0.5em;
+    padding: 1em;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+.containerForm h2 {
+    font-size: 1.8em;
+    letter-spacing: 0.05em;
+    color: rgb(104, 102, 102);
+    margin-bottom: 0.5em;
+}
+
+.containerInputLabel {
+    text-align-last: justify;
+    padding: 0.8em 0;
+    margin: 0 1.45em;
+    border-radius: 0.2em;
+
+}
+
+.containerInputLabel label {
+    letter-spacing: 0.05em;
+    color: rgb(104, 102, 102);
+}
+
+.form {
+    margin-top: 2em;
+}
+
+
+.input {
+    padding: 0.35em 0;
+    border-radius: 0.5em;
+    border: solid 0.05em rgb(133, 130, 130);
+    color: rgb(104, 102, 102);
+}
+
+.buttonForm {
+    width: 19.5em;
+    height: 2.8em;
+    padding: 0 1.5em;
+    background: #e67fa3;
+    margin: 3em 0;
+    letter-spacing: 0.07em;
+}
+
+button:hover {
+    background-color: #3e4144;
+}
+
+button:focus {
+    outline: none;
+}
+
+.spanError {
+    color: red;
+}
+
+@media (min-width: 630px) {
+    .allForm {
+        width: 36em;
+    }
+
+    .containerForm h2 {
+        letter-spacing: 0.08em;
+        font-size: 2.3em;
+    }
+
+    .containerInputLabel label {
+        letter-spacing: 0.08em;
+        font-size: 1.2em;
+    }
+
+    .input {
+        padding: 0.5em 2.2em;
+    }
+
+    .buttonForm {
+        width: 22.5em;
+        font-size: 1em;
+        height: 2.5em;
+    }
+
+
+}

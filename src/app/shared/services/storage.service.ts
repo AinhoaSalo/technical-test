@@ -16,7 +16,7 @@ export class StorageService {
   }
 
   isLoggedIn(): boolean {
-    const user = window.sessionStorage.getItem(userToken);
+    let user = window.sessionStorage.getItem(userToken);
     if (user) {
       return true;
     }else{
@@ -25,7 +25,7 @@ export class StorageService {
   }
 
   getTokenUser(): any {
-    const user = window.sessionStorage.getItem(userToken);
+    let user = window.sessionStorage.getItem(userToken);
     console.log('here')
     if (user) {
       return JSON.parse(user);
