@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
+import { MessageComponent } from './components/message/message.component';
 
 
 
@@ -12,12 +13,14 @@ import { HeaderComponent } from './components/header/header.component';
     declarations: [
         NavbarComponent,
         FooterComponent,
-        HeaderComponent
+        HeaderComponent,
+        MessageComponent,
     ],
     exports: [
         NavbarComponent,
         FooterComponent,
-        HeaderComponent
+        HeaderComponent,
+        MessageComponent
 
     ],
     imports: [ 
