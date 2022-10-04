@@ -66,6 +66,10 @@ button:focus {
     outline: none;
 }
 
+.spanError{
+    color: red;
+}
+
 @media (min-width: 630px) {
 
 }

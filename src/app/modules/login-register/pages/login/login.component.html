@@ -24,6 +24,10 @@
         />
       </div>
 
+      <div>
+        <span class="spanError" *ngIf="this.checkError">{{errorMessage}}</span>
+      </div>
+
       <button class="buttonForm" (click)="onSubmit()">Accede</button>
     </form>
   </div>

@@ -14,8 +14,13 @@ export class PersonalAreaComponent implements OnInit {
   userMe: any;
   token: string = ''; //private?
   errorMessage: string = '';
+  checkError: boolean = false;
   modify: boolean = false;
   deleteConfirm: boolean = false;
+  form: any = {
+    name: '',
+    surname: ''
+  }
 
   constructor(private usersService: UsersService, private storageService: StorageService, private router: Router) { }
   
@@ -27,16 +32,16 @@ export class PersonalAreaComponent implements OnInit {
     if (!callLoggedIn || UNDEFINED_NULL) {
       alert('Por favor, tiene que loguearse');
       this.router.navigate(['login']);
-
     } else {
       this.token = this.storageService.getTokenUser().accessToken;
       this.usersService.getUserMe(this.token).subscribe({
         next: (data: any) => {
-          console.log(data)
           this.userMe = data;
+          this.form.name = data.name;
+          this.form.surname = data.surname;
         }, error: (err: any) => {
+          this.checkError = true;
           this.errorMessage = err.error.message;
-          window.alert(this.errorMessage)
         }
       });
     }
@@ -45,33 +50,39 @@ export class PersonalAreaComponent implements OnInit {
 
   buttonModify() {
     this.modify = true;
+    this.checkError = false;
   }
 
   buttonCancelDeleteModify(){
     this.modify = false;
     this.deleteConfirm = false;
+    this.checkError = false;
+    this.form = this.userMe
+     
   }
 
   buttonDelete(){
     this.modify = true;
     this.deleteConfirm = true;
+    this.checkError = false;
   }
 
   put() {
-    if ((this.userMe.name === "") || (this.userMe.surname === "")) {
-      alert("Campo vacio, por favor, introduzca el nombre y el apellido")
+    if ((this.form.name === "") || (this.form.surname === "")) {
+      this.checkError = true;
+      this.errorMessage="Campo vacio, introduzca el nombre y el apellido";
     } else {
       this.token = this.storageService.getTokenUser().accessToken;
-      this.usersService.putUser(this.token, this.userMe.id, this.userMe.name, this.userMe.surname).subscribe({
+      this.usersService.putUser(this.token, this.userMe.id, this.form.name, this.form.surname).subscribe({
         next: (data: any) => {
-          console.log(data)
           this.userMe = data;
         }, error: (err: any) => {
+          this.checkError = true;
           this.errorMessage = err.error.message;
-          window.alert(this.errorMessage)
         }
       });
       this.modify = false;
+      this.checkError = false;
     }
     
   }
@@ -83,7 +94,7 @@ export class PersonalAreaComponent implements OnInit {
           console.log(data);
         }, error: (err: any) => {
           this.errorMessage = err.error.message;
-          window.alert(this.errorMessage)
+          console.log(this.errorMessage)
         }
       });
     sessionStorage.removeItem('authTokenUser');
@@ -95,7 +106,6 @@ export class PersonalAreaComponent implements OnInit {
 
   logOut() {
     sessionStorage.removeItem('authTokenUser');
-    alert('Sesión cerrada');
     this.router.navigate(['']);
   }
 

@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   email: string = '';
   password: string = '';
   errorMessage: string = '';
+  checkError: boolean = false;
 
   constructor(private apiUsersService: ApiUsersService, private storageService: StorageService, private router: Router, private utils: Utils) { }
   ngOnInit(): void { }
@@ -24,18 +25,18 @@ export class LoginComponent implements OnInit {
     let validateInputs = this.utils.validate(validateEmpty);
 
     if (!validateInputs.check) {
-      alert(validateInputs.message)
+      this.checkError = true;
+      this.errorMessage=validateInputs.message;
     } else {
       this.apiUsersService.loginService(this.email, this.password).subscribe({
         next: (data: any) => {
-          //debugger
           this.storageService.saveTokenUser(data)
-          alert('Contraseña correcta')
           this.router.navigate(['/usuarios']);
         },
         error: (err: any) => {
           this.errorMessage = err.error.message;
-          alert(this.errorMessage)
+          this.checkError = true;
+          this.errorMessage=this.errorMessage
         }
       })
     }

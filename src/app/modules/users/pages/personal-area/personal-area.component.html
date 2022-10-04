@@ -16,12 +16,12 @@
 
       <div>
         <label for="name">Nombre: </label>
-        <input type="text" [(ngModel)]="userMe.name" name="name" id="name" value="{{userMe.name}}"/>
+        <input type="text" [(ngModel)]="form.name" name="name" id="name" value="{{form.name}}"/>
       </div>
 
       <div>
         <label for="surname">Apellido: </label>
-        <input type="text" [(ngModel)]="userMe.surname" name="surname" id="surname" value="{{userMe.surname}}"/>
+        <input type="text" [(ngModel)]="form.surname" name="surname" id="surname" value="{{form.surname}}"/>
       </div>
 
       <div>
@@ -41,7 +41,10 @@
         <button (click)="delete();">Si</button>
         <button (click)="buttonCancelDeleteModify()">No</button>
       </div>
+    </div>
 
+    <div>
+      <span class="spanError" *ngIf="this.checkError">{{errorMessage}}</span>
     </div>
     
   </form>

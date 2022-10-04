@@ -22,6 +22,10 @@
                 <input  class="input" type="password" [(ngModel)]="form.password" name="password" id="password" />
             </div>
 
+            <div>
+                <span class="spanError" *ngIf="this.checkError">{{errorMessage}}</span>
+            </div>
+
             <button  class="buttonForm" (click)="onSubmit()">Registrate</button>
         </form>
     </div>
