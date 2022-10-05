@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class PersonalAreaComponent implements OnInit {
 
   userMe: any;
-  token: string = ''; //private?
+  token: string = '';
   errorMessage: string = '';
   checkError: boolean = false;
   modify: boolean = false;
@@ -28,7 +28,7 @@ export class PersonalAreaComponent implements OnInit {
     const undefinedNull = undefined || null;
     const callLoggedIn = this.storageService.isLoggedIn();
     
-    
+    // Make them only accessible if you are logged in
     if (!callLoggedIn || undefinedNull) {
       alert('Por favor, tiene que loguearse');
       this.router.navigate(['login']);
@@ -45,7 +45,6 @@ export class PersonalAreaComponent implements OnInit {
         }
       });
     }
-
   }
 
   buttonModify() {
@@ -57,8 +56,7 @@ export class PersonalAreaComponent implements OnInit {
     this.modify = false;
     this.deleteConfirm = false;
     this.checkError = false;
-    this.form = this.userMe
-     
+    this.form = this.userMe;
   }
 
   buttonDelete(){
@@ -98,7 +96,7 @@ export class PersonalAreaComponent implements OnInit {
     sessionStorage.removeItem('authTokenUser');
     alert('Usuario borrado');
     this.router.navigate(['']);
-    this.modify = false
+    this.modify = false;
 
   }
 

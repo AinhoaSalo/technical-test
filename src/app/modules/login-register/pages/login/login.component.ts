@@ -30,13 +30,13 @@ export class LoginComponent implements OnInit {
     } else {
       this.apiUsersService.loginService(this.email, this.password).subscribe({
         next: (data: any) => {
-          this.storageService.saveTokenUser(data)
+          this.storageService.saveTokenUser(data);
           this.router.navigate(['/usuarios']);
         },
         error: (err: any) => {
           this.errorMessage = err.error.message;
           this.checkError = true;
-          this.errorMessage=this.errorMessage
+          this.errorMessage=this.errorMessage;
         }
       })
     }

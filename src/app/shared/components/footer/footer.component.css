@@ -10,15 +10,12 @@
     font-weight: bold;
 }
 
-ul {
-    list-style-type: none;
-}
-
 .socialMedia {
     display: flex;
     flex-direction: row;
     padding: 0;
     margin: 0.2em;
+    list-style-type: none;
 }
 
 .linkSocialMedia {

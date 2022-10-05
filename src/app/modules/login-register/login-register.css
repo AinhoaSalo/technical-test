@@ -4,6 +4,13 @@
     padding-top: 7em;
 }
 
+.containerForm h2 {
+    font-size: 1.8em;
+    letter-spacing: 0.05em;
+    color: rgb(104, 102, 102);
+    margin-bottom: 0.5em;
+}
+
 .allForm {
     display: grid;
     place-content: center;
@@ -17,11 +24,8 @@
     font-family: 'Playfair Display', serif;
 }
 
-.containerForm h2 {
-    font-size: 1.8em;
-    letter-spacing: 0.05em;
-    color: rgb(104, 102, 102);
-    margin-bottom: 0.5em;
+.form {
+    margin-top: 2em;
 }
 
 .containerInputLabel {
@@ -32,21 +36,20 @@
 
 }
 
-.containerInputLabel label {
+.label {
     letter-spacing: 0.05em;
     color: rgb(104, 102, 102);
 }
-
-.form {
-    margin-top: 2em;
-}
-
 
 .input {
     padding: 0.35em 0;
     border-radius: 0.5em;
     border: solid 0.05em rgb(133, 130, 130);
     color: rgb(104, 102, 102);
+}
+
+.spanError {
+    color: rgb(83, 6, 6);
 }
 
 .buttonForm {
@@ -66,21 +69,17 @@ button:focus {
     outline: none;
 }
 
-.spanError {
-    color: red;
-}
-
 @media (min-width: 630px) {
-    .allForm {
-        width: 36em;
-    }
-
     .containerForm h2 {
         letter-spacing: 0.08em;
         font-size: 2.3em;
     }
+    
+    .allForm {
+        width: 36em;
+    }
 
-    .containerInputLabel label {
+    .label {
         letter-spacing: 0.08em;
         font-size: 1.2em;
     }
@@ -94,6 +93,5 @@ button:focus {
         font-size: 1em;
         height: 2.5em;
     }
-
 
 }

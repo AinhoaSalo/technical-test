@@ -28,24 +28,20 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void {
     const { name, surname, email, password } = this.form;
     const validateEmpty = this.form.name || this.form.surname || this.form.email || this.form.password;
-    const validateInputs = this.utils.validate(validateEmpty)
-    // const validateNameSurname = this.form.name.match(/^(?![\s.]+$)[a-zA-Z\s.]*$/);
-    // const validateEmail = 
-    // const validatePassword = 
+    const validateInputs = this.utils.validate(validateEmpty);
 
     if (!validateInputs.check) {
       this.checkError = true;
-      this.errorMessage= validateInputs.message
+      this.errorMessage= validateInputs.message;
     } else {
       this.apiUsersService.registerService(name, surname, email, password).subscribe({
         next: () => {
-          //alert('Usuario creado'); TO DO
           this.router.navigate(['/login']);
         }, error: (err: any) => {
           this.checkError = true;
           this.errorMessage = err.error.message;
         }
-      });//CONTROL OF ERRORS AND VALIDATIONS
+      });
     }
 
   }

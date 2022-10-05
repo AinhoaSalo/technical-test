@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class UsersListComponent implements OnInit {
 
   users: any;
-  token: string = ''; //private?
+  token: string = '';
   errorMessage: string = '';
   page: number = 1; //for pagination
 
@@ -25,7 +25,7 @@ export class UsersListComponent implements OnInit {
     if (!callLoggedIn || undefined || null) {
 
       alert('Por favor, tiene que loguearse');
-      this.router.navigate(['login']); //redirect to login
+      this.router.navigate(['login']);
 
     } else {
 
@@ -33,11 +33,9 @@ export class UsersListComponent implements OnInit {
 
       this.usersService.getUsers(this.token).subscribe({
         next: (data: any) => {
-          console.log(data)
           this.users = data.items;
         }, error: (err: any) => {
           this.errorMessage = err.error.message;
-          alert(this.errorMessage)
         }
       });
     }

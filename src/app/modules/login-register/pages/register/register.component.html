@@ -1,32 +1,32 @@
 <div class="containerForm">
-    <div class="allForm">
-        <h2>Accede a tu cuenta</h2>
-        <form class="form">
-            <div class="containerInputLabel">
-                <label for="enamemail">Nombre: </label>
-                <input  class="input" type="name" [(ngModel)]="form.name" name="name" id="name" />
-            </div>
+  <div class="allForm">
+    <h2>Accede a tu cuenta</h2>
+    <form class="form">
+      <div class="containerInputLabel">
+        <label class="label" for="enamemail">Nombre: </label>
+        <input class="input" type="name" [(ngModel)]="form.name" name="name" id="name" />
+      </div>
 
-            <div class="containerInputLabel">
-                <label for="surname">Apellido: </label>
-                <input  class="input" type="surname" [(ngModel)]="form.surname" name="surname" id="surname" />
-            </div>
+      <div class="containerInputLabel">
+        <label class="label" for="surname">Apellido: </label>
+        <input class="input" type="surname" [(ngModel)]="form.surname" name="surname" id="surname" />
+      </div>
 
-            <div class="containerInputLabel">
-                <label for="email">Email: </label>
-                <input  class="input" type="email" [(ngModel)]="form.email" name="email" id="email" />
-            </div>
+      <div class="containerInputLabel">
+        <label class="label" for="email">Email: </label>
+        <input class="input" type="email" [(ngModel)]="form.email" name="email" id="email" />
+      </div>
 
-            <div class="containerInputLabel">
-                <label for="password">Contraseña: </label>
-                <input  class="input" type="password" [(ngModel)]="form.password" name="password" id="password" />
-            </div>
+      <div class="containerInputLabel">
+        <label class="label" for="password">Contraseña: </label>
+        <input class="input" type="password" [(ngModel)]="form.password" name="password" id="password" />
+      </div>
 
-            <div>
-                <span class="spanError" *ngIf="this.checkError">{{errorMessage}}</span>
-            </div>
+      <div>
+        <span class="spanError" *ngIf="this.checkError">{{errorMessage}}</span>
+      </div>
 
-            <button  class="buttonForm" (click)="onSubmit()">Registrate</button>
-        </form>
-    </div>
+      <button class="buttonForm" (click)="onSubmit()">Registrate</button>
+    </form>
+  </div>
 </div>

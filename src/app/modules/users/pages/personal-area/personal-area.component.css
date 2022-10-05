@@ -5,6 +5,10 @@
     padding-top: 2em; /*5em???*/
 }
 
+#titlePersonalArea{
+    color: #EA6E99;
+}
+
 #dataUsersPersonalArea{
     padding: 2em 0;
     background-color: rgba(69, 98, 109, 0.863);
@@ -13,22 +17,18 @@
     list-style: none;
 }
 
-#titlePersonalArea{
-    color: #EA6E99;
-}
-
-#dataUsersPersonalArea img{
+#imgDataPersonalArea{
     margin: 2em;
     border-radius: 0.5em;
 }
 
-#dataUsersPersonalArea ul{
+#ulPersonalArea{
     list-style: none;
     text-align-last: justify;
     padding: 0 6.3em;
 }
 
-#dataUsersPersonalArea li{
+.liPersonalArea{
     color: #EA6E99;
     font-size: 1.2em;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
@@ -36,7 +36,7 @@
 }
 
 .spanError {
-    color: red;
+    color: rgb(232 185 185);
 }
 
 @media (min-width: 630px) {
