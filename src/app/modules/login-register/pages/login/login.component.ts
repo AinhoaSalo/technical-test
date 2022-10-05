@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
 
   //Method to send form data
   onSubmit(): void { 
-    let validateEmpty = this.email || this.password;
-    let validateInputs = this.utils.validate(validateEmpty);
+    const validateEmpty = this.email || this.password;
+    const validateInputs = this.utils.validate(validateEmpty);
 
     if (!validateInputs.check) {
       this.checkError = true;

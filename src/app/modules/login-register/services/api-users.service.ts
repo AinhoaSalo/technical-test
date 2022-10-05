@@ -17,8 +17,8 @@ export class ApiUsersService {
   //Methods what connect to the API Hiberus
   registerService(name: string, surname: string, email: string, password: string): Observable<any> {
     // debugger
-    const URL_REGISTER = `${this.apiUrl}/auth/sign-up`;
-    return this.http.post(URL_REGISTER, {
+    const registerUrl = `${this.apiUrl}/auth/sign-up`;
+    return this.http.post(registerUrl, {
       name,
       surname,
       email,
@@ -27,8 +27,8 @@ export class ApiUsersService {
   }
 
   loginService(email: string, password: string): Observable<any> {
-    const URL_LOGIN = `${this.apiUrl}/auth/log-in`;
-    return this.http.post(URL_LOGIN, {
+    const loginUrl = `${this.apiUrl}/auth/log-in`;
+    return this.http.post(loginUrl, {
       email,
       password
     }, httpOptions);

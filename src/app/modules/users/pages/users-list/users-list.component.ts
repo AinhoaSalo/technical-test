@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users.service';
 import { StorageService } from 'src/app/shared/services/storage/storage.service';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
 
 
 @Component({
@@ -20,7 +19,7 @@ export class UsersListComponent implements OnInit {
   constructor(private usersService: UsersService, private storageService: StorageService, private router: Router) { }
 
   ngOnInit(): void {
-    let callLoggedIn = this.storageService.isLoggedIn();
+    const callLoggedIn = this.storageService.isLoggedIn();
     
     // Make them only accessible if you are logged in
     if (!callLoggedIn || undefined || null) {
@@ -34,6 +33,7 @@ export class UsersListComponent implements OnInit {
 
       this.usersService.getUsers(this.token).subscribe({
         next: (data: any) => {
+          console.log(data)
           this.users = data.items;
         }, error: (err: any) => {
           this.errorMessage = err.error.message;

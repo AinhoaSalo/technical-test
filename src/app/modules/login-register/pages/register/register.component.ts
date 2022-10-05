@@ -26,12 +26,12 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    let { name, surname, email, password } = this.form;
-    let validateEmpty = this.form.name || this.form.surname || this.form.email || this.form.password;
-    let validateInputs = this.utils.validate(validateEmpty)
-    // let validateNameSurname = this.form.name.match(/^(?![\s.]+$)[a-zA-Z\s.]*$/);
-    // let validateEmail = 
-    // let validatePassword = 
+    const { name, surname, email, password } = this.form;
+    const validateEmpty = this.form.name || this.form.surname || this.form.email || this.form.password;
+    const validateInputs = this.utils.validate(validateEmpty)
+    // const validateNameSurname = this.form.name.match(/^(?![\s.]+$)[a-zA-Z\s.]*$/);
+    // const validateEmail = 
+    // const validatePassword = 
 
     if (!validateInputs.check) {
       this.checkError = true;

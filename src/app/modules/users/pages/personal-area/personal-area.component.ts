@@ -25,11 +25,11 @@ export class PersonalAreaComponent implements OnInit {
   constructor(private usersService: UsersService, private storageService: StorageService, private router: Router) { }
   
   ngOnInit(): void {
-    const UNDEFINED_NULL = undefined || null;
-    let callLoggedIn = this.storageService.isLoggedIn();
+    const undefinedNull = undefined || null;
+    const callLoggedIn = this.storageService.isLoggedIn();
     
     
-    if (!callLoggedIn || UNDEFINED_NULL) {
+    if (!callLoggedIn || undefinedNull) {
       alert('Por favor, tiene que loguearse');
       this.router.navigate(['login']);
     } else {

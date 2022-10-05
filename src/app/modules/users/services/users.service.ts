@@ -13,21 +13,21 @@ export class UsersService {
 
   constructor(private http: HttpClient, private utils: Utils) { }
 
-  getUsers(token: string): Observable<any> {
-    let httpOptions = this.utils.getHeaders(token);
+  getUsers(token: string): Observable<Object> {
+    const httpOptions = this.utils.getHeaders(token);
     return this.http.get(this.apiUrl, httpOptions)
   }
 
-  getUserMe(token: string): Observable<any> {
-    let httpOptions = this.utils.getHeaders(token);
+  getUserMe(token: string): Observable<Object> {
+    const httpOptions = this.utils.getHeaders(token);
    
     return this.http.get(this.urlMe, httpOptions)
   }
 
   putUser(token: string, id: string, name: string, surname: string): Observable<any> {
-    let httpOptions = this.utils.getHeaders(token)
-    let urlPutUsers = `${this.apiUrl}/${id}`;
-    let dataUser = {
+    const httpOptions = this.utils.getHeaders(token)
+    const urlPutUsers = `${this.apiUrl}/${id}`;
+    const dataUser = {
       "name": `${name}`,
       "surname": `${surname}`
     }
@@ -35,8 +35,8 @@ export class UsersService {
   }
 
   deleteUsers(token: string, id: string): Observable<any> {
-    let httpOptions = this.utils.getHeaders(token);
-    let urldeleteUsers = `${this.apiUrl}/${id}`;
+    const httpOptions = this.utils.getHeaders(token);
+    const urldeleteUsers = `${this.apiUrl}/${id}`;
     return this.http.delete(urldeleteUsers, httpOptions)
   }
 }
