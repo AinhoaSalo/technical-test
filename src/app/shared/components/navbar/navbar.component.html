@@ -4,7 +4,7 @@
   </div>
   <ul id="ulNavbar">
     <li class="liNavbar" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</li>
-    <li class="liNavbar" routerLink="registro" routerLinkActive="active">Registro</li>
+    <li class="liNavbar" routerLink="registro" routerLinkActive="active" *ngIf="!isLogged()">Registro</li>
     <li class="liNavbar" routerLink="login" routerLinkActive="active" *ngIf="!isLogged()">Login</li>
     <li class="liNavbar" routerLink="areapersonal" routerLinkActive="active" *ngIf="isLogged()">Area personal</li>
     <li class="liNavbar" routerLink="usuarios" routerLinkActive="active"*ngIf="isLogged()">Usuarios</li>
