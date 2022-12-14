@@ -5,12 +5,14 @@ import { LoginComponent } from './modules/login-register/pages/login/login.compo
 import { RegisterComponent } from './modules/login-register/pages/register/register.component';
 import { UsersListComponent } from './modules/users/pages/users-list/users-list.component';
 import { PersonalAreaComponent } from './modules/users/pages/personal-area/personal-area.component';
+import { AuthGuard } from "./modules/login-register/guards/auth.guard";
 
 
 const routes: Routes = [
     {
         path: '',
         component: HomeComponent,
+        canActivate: [AuthGuard], //https://binarycoffee.dev/post/guards-en-angular-como-funcionan
         pathMatch: 'full'
     },
     {
